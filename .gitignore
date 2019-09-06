@@ -90,3 +90,4 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 discord-token.txt
+twitch-client-id.txt
