@@ -20,6 +20,7 @@
     "@types/node": "^12.7.2",
     "@types/request": "^2.48.2",
     "discord.js": "^11.5.1",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "twilio": "^3.34.0"
   }
 }
