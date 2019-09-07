@@ -1,0 +1,1 @@
+//https://api.mcsrvstat.us/2/hecked12.aternos.me
