@@ -7,7 +7,7 @@ export let config = {
     "token": token,
     "twitchClientId": twitchClientId,
     "prefix": "!",
-    "botChannelId": "614400211913015304",
+    "botChannelId": "632576166011731975",
     "twitchStreams": [
         {
             "title": "lol",
