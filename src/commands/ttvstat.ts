@@ -71,15 +71,17 @@ ${stream.viewer_count} 👁️`);
     const selectedCategory: string =  args[1];
 
     if(streamerName === "all") {
-      let twitchCategories = config.config.twitchStreams;
-      for(let k = 0; k< twitchCategories.length; k++){
-        if(twitchCategories[k].title === selectedCategory){
-          for(let i = 0; i< twitchCategories[k].streamers.length; i++){
-            let streams: any = await this.getStreamerStatus(twitchCategories[k].streamers[i].name);
-            this.returnStatus(twitchCategories[k].streamers[i].name, streams, msgObject); 
-          }
+      const twitchCategories = config.config.twitchStreams;
+
+      twitchCategories.forEach(async (ttvStreamerObject: any) => {
+        if(ttvStreamerObject.title === selectedCategory){
+          const streamers = ttvStreamerObject.streamers;
+          streamers.forEach(async (streamer: any) => {
+            let streams: any = await this.getStreamerStatus(streamer.name);
+            this.returnStatus(streamer.name, streams, msgObject); 
+          });
         }
-      }
+      })
     } else {
       let streams: any = await this.getStreamerStatus(streamerName);
       this.returnStatus(streamerName, streams, msgObject);

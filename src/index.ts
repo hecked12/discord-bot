@@ -14,12 +14,10 @@ client.on("ready", () => {
 
 client.on("message", msg => {
     console.log(msg.channel.id);
-    
+
     if(msg.author.bot) return;
     if(!msg.content.startsWith(config.config.prefix)) return;
     if(msg.channel.id !== config.config.botChannelId) return;
-
-    
 
     handleCommand(msg);
 });
